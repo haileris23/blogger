@@ -1,8 +1,15 @@
 <h1>Check me out!</h1>
 
-<p>
-<%= @article.title %>
+<h3><%= @article.title %></h3>
+  <p>
+    Tags: 
+      <% @article.tags.each do |tag| %>
+        <%= link_to tag.name, tag_path(tag) %>
+      <% end %>
+  </p>
+
 <br />
+<p>
 <%= @article.body %>
 </p>
 
